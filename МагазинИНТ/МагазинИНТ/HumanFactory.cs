@@ -9,6 +9,8 @@ namespace МагазинИНТ.Люди
     abstract class HumanFactory
     {
         //public abstract HumanFactory setName();
-        public abstract AbstractCard setCard();
+        public abstract AbstractCard setTubeDiscountCard();
+        public abstract AbstractCard setTransistorCard();
+        public abstract AbstractCard setIntegratedCard();
     }
 }

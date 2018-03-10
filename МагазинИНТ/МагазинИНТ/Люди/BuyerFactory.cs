@@ -10,7 +10,17 @@ namespace МагазинИНТ
 {
     abstract class BuyerFactory : HumanFactory
     {
-        public override AbstractCard setCard()
+        public override AbstractCard setIntegratedCard()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override AbstractCard setTransistorCard()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override AbstractCard setTubeDiscountCard()
         {
             throw new NotImplementedException();
         }

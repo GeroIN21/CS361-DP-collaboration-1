@@ -27,9 +27,19 @@ namespace МагазинИНТ.Люди
         //    name.setName();
         //}
 
-        public void Card(HumanFactory factory)
+        public void setTubeDiscountCard(HumanFactory factory)
         {
-            card = factory.setCard();
+            card = factory.setTubeDiscountCard();
+        }
+
+        public void setTransistorCard(HumanFactory factory)
+        {
+            card = factory.setTransistorCard();
+        }
+
+        public void setIntegratedCard(HumanFactory factory)
+        {
+            card = factory.setIntegratedCard();
         }
     }
 }
