@@ -23,7 +23,7 @@ namespace МагазинИНТ
             sqlConnection.Open();
             using (var MyConnection = new SqlConnection(StoreConnectionString))
             {               
-                SqlCommand addBuyer = new SqlCommand("Insert into [Buyers] (name) values (@name)", MyConnection);
+                SqlCommand addBuyer = new SqlCommand("Insert into [Buyers] (Name) values (@name)", MyConnection);
                 addBuyer.Parameters.AddWithValue("@name", name.ToString());
                 MyConnection.Open();
                 addBuyer.ExecuteNonQuery();

@@ -24,11 +24,12 @@ namespace МагазинИНТ
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dP_StoreDataSet.SelectBuyer_SP". При необходимости она может быть перемещена или удалена.
+            this.selectBuyer_SPTableAdapter.Fill(this.dP_StoreDataSet.SelectBuyer_SP);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dP_StoreDataSet.Buyers". При необходимости она может быть перемещена или удалена.
             this.buyersTableAdapter.Fill(this.dP_StoreDataSet.Buyers);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dP_StoreDataSet.Products". При необходимости она может быть перемещена или удалена.
             this.productsTableAdapter.Fill(this.dP_StoreDataSet.Products);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +50,8 @@ namespace МагазинИНТ
             int returned = cashier.AddBuyer(name);
 
             label3.Text = "Индекс покупателя: " + returned + "";
+
+            this.selectBuyer_SPTableAdapter.Fill(this.dP_StoreDataSet.SelectBuyer_SP);
         }
     }
 }

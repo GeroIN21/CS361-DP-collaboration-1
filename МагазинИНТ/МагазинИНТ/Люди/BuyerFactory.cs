@@ -8,16 +8,11 @@ using МагазинИНТ.Люди;
 
 namespace МагазинИНТ
 {
-    class BuyerFactory : HumanFactory
+    abstract class BuyerFactory : HumanFactory
     {
         public override AbstractCard setCard()
         {
             throw new NotImplementedException();
         }
-
-        //public override HumanFactory setName()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

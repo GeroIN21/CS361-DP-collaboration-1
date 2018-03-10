@@ -8,11 +8,18 @@ namespace МагазинИНТ.Люди
 {
     class Buyer
     {
-        private BuyerFactory card;
+        private AbstractCard card;
         //private BuyerFactory name;
 
-        public Buyer(BuyerFactory factory)
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Sum { get; set; }
+
+        public Buyer(int id, string name, int sum)
         {
+            ID = id;
+            Name = name;
+            Sum = sum;
         }
 
         //public void Name()
@@ -20,9 +27,9 @@ namespace МагазинИНТ.Люди
         //    name.setName();
         //}
 
-        public void Card()
+        public void Card(HumanFactory factory)
         {
-            card.setCard();
+            card = factory.setCard();
         }
     }
 }

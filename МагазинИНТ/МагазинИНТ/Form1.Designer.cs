@@ -40,12 +40,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.selectBuyerSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dP_StoreDataSet = new МагазинИНТ.DP_StoreDataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dP_StoreDataSet = new МагазинИНТ.DP_StoreDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,16 +55,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.productsTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.ProductsTableAdapter();
             this.buyersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.ProductsTableAdapter();
             this.buyersTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.BuyersTableAdapter();
+            this.selectBuyer_SPTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.SelectBuyer_SPTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectBuyerSPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dP_StoreDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dP_StoreDataSet)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -172,13 +175,23 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.buyersBindingSource;
-            this.comboBox1.DisplayMember = "ID";
+            this.comboBox1.DataSource = this.selectBuyerSPBindingSource;
+            this.comboBox1.DisplayMember = "name";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(62, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(132, 21);
             this.comboBox1.TabIndex = 0;
+            // 
+            // selectBuyerSPBindingSource
+            // 
+            this.selectBuyerSPBindingSource.DataMember = "SelectBuyer_SP";
+            this.selectBuyerSPBindingSource.DataSource = this.dP_StoreDataSet;
+            // 
+            // dP_StoreDataSet
+            // 
+            this.dP_StoreDataSet.DataSetName = "DP_StoreDataSet";
+            this.dP_StoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -227,11 +240,6 @@
             // 
             this.productsBindingSource.DataMember = "Products";
             this.productsBindingSource.DataSource = this.dP_StoreDataSet;
-            // 
-            // dP_StoreDataSet
-            // 
-            this.dP_StoreDataSet.DataSetName = "DP_StoreDataSet";
-            this.dP_StoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label9
             // 
@@ -313,18 +321,22 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Покупалеть";
             // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
             // buyersBindingSource
             // 
             this.buyersBindingSource.DataMember = "Buyers";
             this.buyersBindingSource.DataSource = this.dP_StoreDataSet;
             // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // buyersTableAdapter
             // 
             this.buyersTableAdapter.ClearBeforeFill = true;
+            // 
+            // selectBuyer_SPTableAdapter
+            // 
+            this.selectBuyer_SPTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -341,10 +353,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectBuyerSPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dP_StoreDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dP_StoreDataSet)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buyersBindingSource)).EndInit();
@@ -382,6 +395,8 @@
         private DP_StoreDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.BindingSource buyersBindingSource;
         private DP_StoreDataSetTableAdapters.BuyersTableAdapter buyersTableAdapter;
+        private System.Windows.Forms.BindingSource selectBuyerSPBindingSource;
+        private DP_StoreDataSetTableAdapters.SelectBuyer_SPTableAdapter selectBuyer_SPTableAdapter;
     }
 }
 

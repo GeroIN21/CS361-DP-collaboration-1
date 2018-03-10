@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Connect.cs" />
     <Compile Include="DP_StoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DP_StoreDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HumanFactory.cs" />
     <Compile Include="Карты\AbstractCard.cs" />
     <Compile Include="Карты\IntegratedCard.cs" />
     <Compile Include="Карты\TransistorCard.cs" />
@@ -67,7 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Люди\HumanFactory.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
