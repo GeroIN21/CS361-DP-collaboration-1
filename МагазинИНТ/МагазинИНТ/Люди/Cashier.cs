@@ -54,7 +54,7 @@ namespace МагазинИНТ.Люди
                 Name = buyerName.ExecuteScalar().ToString();
                 sqlConnection.Close();
             }
-            Buyer buyer = new Buyer(ID, Name, Sum);
+            //Buyer buyer = new Buyer(ID, Name, Sum);
         }
 
         public void GetCard()
