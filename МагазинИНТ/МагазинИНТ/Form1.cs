@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using МагазинИНТ.Люди;
 
 namespace МагазинИНТ
 {
     public partial class Form1 : Form
     {
+        int ID;
+        string name;
+
         public Form1()
         {
             InitializeComponent();
@@ -33,17 +37,15 @@ namespace МагазинИНТ
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            int ID;
+        {           
             ID = comboBox1.SelectedIndex + 1;
-
+            //name = comboBox1.SelectedValue.ToString();
             Cashier cashier = new Cashier();
-            cashier.AuthBuyer();
+            cashier.AuthBuyer(ID);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string name;
             name = textBox1.Text;
 
             Cashier cashier = new Cashier();

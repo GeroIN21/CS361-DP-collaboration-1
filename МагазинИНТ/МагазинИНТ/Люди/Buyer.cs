@@ -28,7 +28,7 @@ namespace МагазинИНТ.Люди
         //}
 
         public void setTubeDiscountCard(HumanFactory factory)
-        {
+        {           
             card = factory.setTubeDiscountCard();
         }
 
