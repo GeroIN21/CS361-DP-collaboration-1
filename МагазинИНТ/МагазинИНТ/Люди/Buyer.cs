@@ -52,6 +52,20 @@ namespace МагазинИНТ.Люди
         //{
         //    card = factory.setTransistorCard();
         //}
+        public void addProduct()
+        {
+            sqlConnection.Open();
+            using (var MyConnection = new SqlConnection(StoreConnectionString))
+            {
+                SqlCommand intoBasket = new SqlCommand("Insert into [Basket] (BuyerID, Cost) values (@BuyerID, @Cost)", MyConnection);
+                intoBasket.Parameters.AddWithValue("@BuyerID", ID.ToString());
+                intoBasket.Parameters.AddWithValue("@Cost", Sum.ToString());
+                MyConnection.Open();
+                intoBasket.ExecuteNonQuery();
+
+                sqlConnection.Close();
+            }
+        }
 
         //public void setIntegratedCard(HumanFactory factory)
         //{
