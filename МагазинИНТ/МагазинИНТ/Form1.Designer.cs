@@ -43,6 +43,7 @@
             this.selectBuyerSPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dP_StoreDataSet = new МагазинИНТ.DP_StoreDataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -59,7 +60,6 @@
             this.productsTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.ProductsTableAdapter();
             this.buyersTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.BuyersTableAdapter();
             this.selectBuyer_SPTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.SelectBuyer_SPTableAdapter();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -209,6 +209,16 @@
             this.tabPage2.Text = "Покупатель";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 165);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(197, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "В кассу";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -226,6 +236,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Добавить в корзину";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // comboBox2
             // 
@@ -339,15 +350,6 @@
             // selectBuyer_SPTableAdapter
             // 
             this.selectBuyer_SPTableAdapter.ClearBeforeFill = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(12, 165);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(197, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "В кассу";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

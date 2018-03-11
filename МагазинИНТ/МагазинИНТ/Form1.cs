@@ -79,16 +79,16 @@ namespace МагазинИНТ
             this.selectBuyer_SPTableAdapter.Fill(this.dP_StoreDataSet.SelectBuyer_SP);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             Buyer buyer = new Buyer(ID, name, Sum);
             buyer.addProduct();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             int prodID = comboBox2.SelectedIndex + 1;
-            
+
             products = products + " " + prodID;
             sqlConnection.Open();
             using (var MyConnection = new SqlConnection(StoreConnectionString))
