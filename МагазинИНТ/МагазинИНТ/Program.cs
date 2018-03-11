@@ -18,9 +18,9 @@ namespace МагазинИНТ
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            TubeDiscountCard tubeCard = new TubeDiscountCard(5, 5000);
-            TransistorCard transistorCard = new TransistorCard(10, 12500);
-            IntegratedCard integratedCard = new IntegratedCard(15, 25000);
+            //TubeDiscountCard tubeCard = new TubeDiscountCard(5, 5000);
+            //TransistorCard transistorCard = new TransistorCard(10, 12500);
+            //IntegratedCard integratedCard = new IntegratedCard(15, 25000);
 
             Cashier cashier = new Cashier();
 

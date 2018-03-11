@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace МагазинИНТ.Люди
 {
-    class Buyer
+    class Buyer : BuyerFactory
     {
         SqlConnection sqlConnection;
         Properties.Settings settings = Properties.Settings.Default;
@@ -28,10 +28,6 @@ namespace МагазинИНТ.Люди
             Sum = sum;
         }
 
-        //public void Name()
-        //{
-        //    name.setName();
-        //}
         public void addProduct()
         {
             sqlConnection.Open();
@@ -47,19 +43,40 @@ namespace МагазинИНТ.Люди
             }
         }
 
-        public void setTubeDiscountCard(HumanFactory factory)
-        {           
-            card = factory.setTubeDiscountCard();
+        //public void setTubeDiscountCard(HumanFactory factory)
+        //{           
+        //    card = factory.setTubeDiscountCard();
+        //}
+
+        //public void setTransistorCard(HumanFactory factory)
+        //{
+        //    card = factory.setTransistorCard();
+        //}
+
+        //public void setIntegratedCard(HumanFactory factory)
+        //{
+        //    card = factory.setIntegratedCard();
+        //}
+        //TubeDiscountCard tubeCard = new TubeDiscountCard(5, 5000);
+        //TransistorCard transistorCard = new TransistorCard(10, 12500);
+        //IntegratedCard integratedCard = new IntegratedCard(15, 25000);
+
+        public override AbstractCard setTubeDiscountCard()
+        {
+            TubeDiscountCard tubeCard = new TubeDiscountCard(5, Sum);
+            throw new NotImplementedException();
         }
 
-        public void setTransistorCard(HumanFactory factory)
+        public override AbstractCard setTransistorCard()
         {
-            card = factory.setTransistorCard();
+            TransistorCard transistorCard = new TransistorCard(10, Sum);
+            throw new NotImplementedException();
         }
 
-        public void setIntegratedCard(HumanFactory factory)
+        public override AbstractCard setIntegratedCard()
         {
-            card = factory.setIntegratedCard();
+            IntegratedCard integratedCard = new IntegratedCard(15, Sum);
+            throw new NotImplementedException();
         }
     }
 }

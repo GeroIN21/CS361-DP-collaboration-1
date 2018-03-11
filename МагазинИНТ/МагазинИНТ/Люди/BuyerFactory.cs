@@ -8,21 +8,24 @@ using МагазинИНТ.Люди;
 
 namespace МагазинИНТ.Люди
 {
-    abstract class BuyerFactory : HumanFactory
+    abstract class BuyerFactory 
     {
-        public override AbstractCard setIntegratedCard()
-        {
-            throw new NotImplementedException();
-        }
+        //public override AbstractCard setIntegratedCard()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override AbstractCard setTransistorCard()
-        {
-            throw new NotImplementedException();
-        }
+        //public override AbstractCard setTransistorCard()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override AbstractCard setTubeDiscountCard()
-        {
-            throw new NotImplementedException();
-        }
+        //public override AbstractCard setTubeDiscountCard()
+        //{
+        //    throw new NotImplementedException();
+        //}
+        public abstract AbstractCard setTubeDiscountCard();
+        public abstract AbstractCard setTransistorCard();
+        public abstract AbstractCard setIntegratedCard();
     }
 }

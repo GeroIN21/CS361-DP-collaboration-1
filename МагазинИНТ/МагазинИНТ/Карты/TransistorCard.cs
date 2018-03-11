@@ -8,13 +8,20 @@ namespace МагазинИНТ
 {
     class TransistorCard : AbstractCard
     {
-        public TransistorCard(int disc, double sum) : base(disc, sum)
+        //double Disc;
+        double DiscTotal;
+        //double Sum;
+
+        public TransistorCard(double disc, double sum) : base(disc, sum)
         {
+            Disc = disc;
+            Sum = sum;
+            calcDiscount();
         }
 
         public override void calcDiscount()
         {
-            throw new NotImplementedException();
+            DiscTotal = Sum * Disc / 100;
         }
     }
 }

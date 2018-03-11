@@ -8,12 +8,12 @@ namespace МагазинИНТ
 {
     abstract class AbstractCard
     {
-        protected int Discount { get; set; }
+        protected double Disc { get; set; }
         protected double Sum { get; set; }
 
-        public AbstractCard (int disc, double sum)
+        public AbstractCard (double disc, double sum)
         {
-            Discount = disc;
+            Disc = disc;
             Sum = sum;
         }
 
