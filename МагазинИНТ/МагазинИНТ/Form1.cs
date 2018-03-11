@@ -8,17 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using МагазинИНТ.Люди;
+using System.Data.SqlClient;
 
 namespace МагазинИНТ
 {
     public partial class Form1 : Form
     {
-        int ID;
+        int ID, i;
         string name;
+        string products;
+        int Sum = 0;
+
+        SqlConnection sqlConnection;
+        Properties.Settings settings = Properties.Settings.Default;
+        public string StoreConnectionString = @"Data Source = KING\SQLEXPRESS;Initial Catalog = DP_Store; Integrated Security = True";
 
         public Form1()
         {
             InitializeComponent();
+            sqlConnection = new SqlConnection(StoreConnectionString);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -40,8 +48,23 @@ namespace МагазинИНТ
         {           
             ID = comboBox1.SelectedIndex + 1;
             //name = comboBox1.SelectedValue.ToString();
-            Cashier cashier = new Cashier();
-            cashier.AuthBuyer(ID);
+            //Cashier cashier = new Cashier();
+            //cashier.AuthBuyer(ID);
+            int Sum;
+            string Name;
+            sqlConnection.Open();
+            using (var MyConnection = new SqlConnection(StoreConnectionString))
+            {
+                SqlCommand buyerSum = new SqlCommand("Select Sum from [Buyers] where [ID] = '" + ID + "'", MyConnection);
+                SqlCommand buyerName = new SqlCommand("Select Name from [Buyers] where [ID] = '" + ID + "'", MyConnection);
+                buyerSum.Connection = MyConnection;
+                buyerName.Connection = MyConnection;
+                MyConnection.Open();
+
+                Sum = Convert.ToInt32(buyerSum.ExecuteScalar());
+                Name = buyerName.ExecuteScalar().ToString();
+                sqlConnection.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +77,29 @@ namespace МагазинИНТ
             label3.Text = "Индекс покупателя: " + returned + "";
 
             this.selectBuyer_SPTableAdapter.Fill(this.dP_StoreDataSet.SelectBuyer_SP);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Buyer buyer = new Buyer(ID, name, Sum);
+            buyer.addProduct();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int prodID = comboBox2.SelectedIndex + 1;
+            
+            products = products + " " + prodID;
+            sqlConnection.Open();
+            using (var MyConnection = new SqlConnection(StoreConnectionString))
+            {
+                SqlCommand productSum = new SqlCommand("Select Cost from [Products] where [ID] = '" + prodID + "'", MyConnection);
+                productSum.Connection = MyConnection;
+                MyConnection.Open();
+
+                Sum = Sum + Convert.ToInt32(productSum.ExecuteScalar());
+                sqlConnection.Close();
+            }
         }
     }
 }

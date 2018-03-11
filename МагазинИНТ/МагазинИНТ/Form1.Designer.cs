@@ -59,6 +59,7 @@
             this.productsTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.ProductsTableAdapter();
             this.buyersTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.BuyersTableAdapter();
             this.selectBuyer_SPTableAdapter = new МагазинИНТ.DP_StoreDataSetTableAdapters.SelectBuyer_SPTableAdapter();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -195,6 +196,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.comboBox2);
@@ -338,6 +340,15 @@
             // 
             this.selectBuyer_SPTableAdapter.ClearBeforeFill = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 165);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(197, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "В кассу";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +408,7 @@
         private DP_StoreDataSetTableAdapters.BuyersTableAdapter buyersTableAdapter;
         private System.Windows.Forms.BindingSource selectBuyerSPBindingSource;
         private DP_StoreDataSetTableAdapters.SelectBuyer_SPTableAdapter selectBuyer_SPTableAdapter;
+        private System.Windows.Forms.Button button5;
     }
 }
 
